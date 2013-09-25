@@ -9,6 +9,11 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <listener>
+    <listener-class>
+  		ITK.SessionCounterListener
+  	</listener-class>
+  </listener>
   <servlet>
     <description></description>
     <display-name>Hello</display-name>
@@ -18,5 +23,35 @@
   <servlet-mapping>
     <servlet-name>Hello</servlet-name>
     <url-pattern>/Hello</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HomePage</display-name>
+    <servlet-name>HomePage</servlet-name>
+    <servlet-class>ITK.HomePage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomePage</servlet-name>
+    <url-pattern>/HomePage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionCount</display-name>
+    <servlet-name>SessionCount</servlet-name>
+    <servlet-class>ITK.SessionCount</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionCount</servlet-name>
+    <url-pattern>/SessionCount</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogOut</display-name>
+    <servlet-name>LogOut</servlet-name>
+    <servlet-class>ITK.LogOut</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogOut</servlet-name>
+    <url-pattern>/LogOut</url-pattern>
   </servlet-mapping>
 </web-app>
