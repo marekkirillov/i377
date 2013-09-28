@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <project name="JavaWebProject" default="war" xmlns:ivy="antlib:org.apache.ivy.ant">
 
+	<!--Duplikatsiooni haldamine-->
 	<property name="src.dir" location="src" />
 	<property name="build.dir" location="build" />
 	<property name="classes.dir" location="${build.dir}/classes" />
@@ -9,6 +10,7 @@
 	<property name="dir.lib" value="WebContent/WEB-INF/lib" />
 	<property name="ivy.retrieve.pattern" value="${dir.lib}/[artifact]-[type]-[revision].[ext]" />
 
+	
 	<path id="classpath">
 		<fileset dir="lib">
 			<include name="*.jar" />
@@ -18,30 +20,37 @@
 		</fileset>
 	</path>
 
+	<!--Targetid ja nende vahelised sõltuvused-->
+	
+	<!--WAR-->
 	<target name="war" depends="compile">
 		<war destfile="${war.file}" webxml="${webContent.dir}/WEB-INF/web.xml">
 			<classes dir="${classes.dir}" />
 			<fileset dir="${webContent.dir}" excludes="**/servlet-api-jar-2.5.jar" />
 		</war>
 	</target>
-
+	
+	<!--Teegid-->
 	<target name="retrieve" description="retreive dependencies">
 		<taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="classpath" />
 		<ivy:resolve file="${basedir}/ivy.xml" log="downloadonly" />
 		<ivy:retrieve pattern="${ivy.retrieve.pattern}" conf="default" />
 	</target>
-
+	
+	<!--Compile-->
 	<target name="compile" depends="clean, init, retrieve">
 		<javac srcdir="${src.dir}" destdir="${classes.dir}" source="1.6" target="1.6" includeantruntime="false">
 			<classpath refid="classpath" />
 			</javac>
 	</target>
-
+		
+	<!--Init-->
 	<target name="init">
 		<mkdir dir="${classes.dir}" />
 		<mkdir dir="${webContent.dir}/WEB-INF/lib" />
 	</target>
-
+	
+	<!--Clean-->
 	<target name="clean">
 		<delete dir="${build.dir}" />
 		<delete dir="${webContent.dir}/WEB-INF/lib" />
