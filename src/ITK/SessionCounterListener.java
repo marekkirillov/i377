@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSessionListener;
 public class SessionCounterListener implements HttpSessionListener
 {
 
-	private static int countOfSessions = 0;
+	private static int countOfSessions;
 	
 	@Override
 	public void sessionCreated(HttpSessionEvent arg0) {
