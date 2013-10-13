@@ -33,7 +33,7 @@ public class UnitDao extends AbstractDao {
 	public void addUnit(String name,String code) throws SQLException{
 		try {
 			st = getConnection().createStatement();
-			rs = st.executeQuery(String.format("INSERT INTO unit VALUES(NEXT VALUE FOR seq1,'%s','%s');",name,code));
+			rs = st.executeQuery(String.format("INSERT INTO unit VALUES(NEXT VALUE FOR seq1,'%s','%s');",name,code));
 		} finally {
 			closeResources();
 		}
