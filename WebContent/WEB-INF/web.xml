@@ -14,6 +14,11 @@
   		ITK.SessionCounterListener
   	</listener-class>
   </listener>
+  <listener>
+    <listener-class>
+  		ITK.DbInitListener
+  	</listener-class>
+  </listener>
   <servlet>
     <description></description>
     <display-name>Hello</display-name>
@@ -53,5 +58,35 @@
   <servlet-mapping>
     <servlet-name>LogOut</servlet-name>
     <url-pattern>/LogOut</url-pattern>
+  </servlet-mapping>
+   <servlet>
+    <description></description>
+    <display-name>Add</display-name>
+    <servlet-name>Add</servlet-name>
+    <servlet-class>ITK.Add</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Add</servlet-name>
+    <url-pattern>/Add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Admin</display-name>
+    <servlet-name>Admin</servlet-name>
+    <servlet-class>ITK.Admin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Admin</servlet-name>
+    <url-pattern>/Admin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Search</display-name>
+    <servlet-name>Search</servlet-name>
+    <servlet-class>ITK.Search</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Search</servlet-name>
+    <url-pattern>/Search</url-pattern>
   </servlet-mapping>
 </web-app>

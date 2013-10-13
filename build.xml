@@ -6,7 +6,7 @@
 	<property name="build.dir" location="build" />
 	<property name="classes.dir" location="${build.dir}/classes" />
 	<property name="webContent.dir" location="WebContent" />
-	<property name="war.file" location="${build.dir}/javaproject.war" />
+	<property name="war.file" location="${build.dir}/JavaWebProject.war" />
 	<property name="dir.lib" value="WebContent/WEB-INF/lib" />
 	<property name="ivy.retrieve.pattern" value="${dir.lib}/[artifact]-[type]-[revision].[ext]" />
 
