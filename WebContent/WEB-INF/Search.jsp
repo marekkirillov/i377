@@ -16,17 +16,17 @@
 
 
 	<ul id="menu">
-		<li><a href="/Search" id="menu_Search">Otsi</a></li>
-		<li><a href="/Add" id="menu_Add">Lisa</a></li>
-		<li><a href="/Admin?action=remove" id="menu_ClearData">Tühjenda</a></li>
-		<li><a href="/Admin?action=insert" id="menu_InsertData">Sisesta näidisandmed</a></li>
+		<li><a href="/marekkirillov/Search" id="menu_Search">Otsi</a></li>
+		<li><a href="/marekkirillov/Add" id="menu_Add">Lisa</a></li>
+		<li><a href="/marekkirillov/Admin?action=remove" id="menu_ClearData">Tühjenda</a></li>
+		<li><a href="/marekkirillov/Admin?action=insert" id="menu_InsertData">Sisesta näidisandmed</a></li>
 	</ul>
 
 	<br />
 	<br />
 	<br />
 
-	<form method="get" action="/Search">
+	<form method="get" action="/marekkirillov/Search">
 		<input name="searchString" id="searchStringBox" value="${param.searchString}" /> <input
 			type="submit" id="filterButton" value="Filtreeri" /> <br />
 		<br />
