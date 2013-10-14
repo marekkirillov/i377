@@ -26,7 +26,7 @@
 
 <br /><br /><br />
 
-  <form method="post" action="/Add">
+  <form method="post" action="/marekkirillov/Add">
 
     <table class="formTable" id="formTable">
       <tbody>
