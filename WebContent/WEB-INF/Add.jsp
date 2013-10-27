@@ -21,7 +21,7 @@
 		<li><a href="Search" id="menu_Search">Otsi</a></li>
 		<li><a href="Add" id="menu_Add">Lisa</a></li>
 		<li><a href="Admin?action=remove" id="menu_ClearData">Tühjenda</a></li>
-		<li><a href="Admin?action=insert" id="menu_InsertData">Sisesta näidisandmed</a></li>
+<!-- 		<li><a href="Admin?action=insert" id="menu_InsertData">Sisesta näidisandmed</a></li> -->
 	</ul>
 
 <br /><br /><br />

@@ -71,10 +71,12 @@ public class UnitDao {
 		EntityManager em = null;
 		try {
 			em = JpaUtil.getFactory().createEntityManager();
-
+			em.getTransaction().begin();
 			Unit unit = em.find(Unit.class, 1L);
 			if (unit != null)
 				em.remove(unit);
+			em.getTransaction().commit();
+
 		} finally {
 			em.close();
 		}
@@ -84,10 +86,13 @@ public class UnitDao {
 		EntityManager em = null;
 		try {
 			em = JpaUtil.getFactory().createEntityManager();
+			em.getTransaction().begin();
 
 			Query query = em
 					.createNativeQuery("TRUNCATE SCHEMA public AND COMMIT");
 			query.executeUpdate();
+			em.getTransaction().commit();
+
 		} finally {
 			em.close();
 		}

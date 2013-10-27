@@ -19,7 +19,7 @@
 		<li><a href="Search" id="menu_Search">Otsi</a></li>
 		<li><a href="Add" id="menu_Add">Lisa</a></li>
 		<li><a href="Admin?action=remove" id="menu_ClearData">Tühjenda</a></li>
-		<li><a href="Admin?action=insert" id="menu_InsertData">Sisesta näidisandmed</a></li>
+<!-- 		<li><a href="Admin?action=insert" id="menu_InsertData">Sisesta näidisandmed</a></li> -->
 	</ul>
 
 	<br />
@@ -43,7 +43,7 @@
 					  <tr>
 					   	<td>
 					   		<div id="row_${unit.code}">
-					   			<c:out value="${unit.name}"/>
+					   		<a href="View?id=${unit.code}" id="view_${unit.name}">${unit.name}</a>	
 					   		</div>
 					   	</td>
 					   	<td>

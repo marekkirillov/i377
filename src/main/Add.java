@@ -14,7 +14,13 @@ public class Add extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("UnitList",new UnitDao().getAllUnits());
+
+		if(request.getParameter("id")!=null){
+			Long UnitId = Long.parseLong(request.getParameter("id"));
+			request.setAttribute("Unit",new UnitDao().findById(UnitId));
+		}
+			request.setAttribute("UnitList",new UnitDao().getAllUnits());
+		
 		request.getRequestDispatcher("WEB-INF/Add.jsp").forward(request, response);
 	}
 
@@ -23,7 +29,7 @@ public class Add extends HttpServlet {
 		
 		String name = request.getParameter("name");
 		String code = request.getParameter("code");
-		Long superUnitId = Long.parseLong(request.getParameter("superUnitId"));
+		
 		if(name != null && code != null)
 		{
 			try {
@@ -31,11 +37,13 @@ public class Add extends HttpServlet {
 				unit.setName(name);
 				unit.setCode(code);
 				
+				if(request.getParameter("superUnitCode")!=null){
+				Long superUnitId = Long.parseLong(request.getParameter("superUnitCode"));
 				Unit superUnit = new UnitDao().findById(superUnitId);
 				if(superUnit!=null)
 				{
 					unit.setSuperUnit(superUnit);
-				}
+				}}
 				
 				new UnitDao().save(unit);
 			} catch (Exception e) {

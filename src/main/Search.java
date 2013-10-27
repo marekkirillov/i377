@@ -44,9 +44,9 @@ public class Search extends HttpServlet {
 	{
 		List<Unit> units = new ArrayList<Unit>();
 		if(param.equals("") || param==null){
-				new UnitDao().getAllUnits();
+				units = new UnitDao().getAllUnits();
 		}else{
-			new UnitDao().searchUnits(param);
+			units = new UnitDao().searchUnits(param);
 		}
 		return units;
 	}
