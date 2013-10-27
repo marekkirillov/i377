@@ -8,5 +8,7 @@
     	<dependency org="org.hsqldb" name="hsqldb" rev="2.3.0"/>
     	<dependency org="org.apache.ant" name="ant" rev="1.9.2"/>
     	<dependency org="commons-dbutils" name="commons-dbutils" rev="1.5"/>
+    	<dependency org="org.hibernate" name="hibernate-entitymanager" rev="4.2.6.Final"/>
+    	
 	</dependencies>
 </ivy-module>

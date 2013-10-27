@@ -18,15 +18,15 @@
 
 
 	<ul id="menu">
-		<li><a href="/marekkirillov/Search" id="menu_Search">Otsi</a></li>
-		<li><a href="/marekkirillov/Add" id="menu_Add">Lisa</a></li>
-		<li><a href="/marekkirillov/Admin?action=remove" id="menu_ClearData">Tühjenda</a></li>
-		<li><a href="/marekkirillov/Admin?action=insert" id="menu_InsertData">Sisesta näidisandmed</a></li>
+		<li><a href="Search" id="menu_Search">Otsi</a></li>
+		<li><a href="Add" id="menu_Add">Lisa</a></li>
+		<li><a href="Admin?action=remove" id="menu_ClearData">Tühjenda</a></li>
+		<li><a href="Admin?action=insert" id="menu_InsertData">Sisesta näidisandmed</a></li>
 	</ul>
 
 <br /><br /><br />
 
-  <form method="post" action="/marekkirillov/Add">
+  <form method="post" action="Add">
 
     <table class="formTable" id="formTable">
       <tbody>
@@ -37,6 +37,23 @@
         <tr>
           <td>Kood:</td>
           <td><input name="code" id="codeBox" value="${param.code}" /></td>
+        </tr>
+         <tr>
+          <td>Ülemüksus:</td>
+          <td>
+          <select id="superUnitCode" name="superUnitCode">
+          					<option value=""></option>
+          					<c:forEach var="unit" items="${UnitList}">
+          					<option value="${unit.code}" label="${unit.name}"></option>
+          					</c:forEach>
+          </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Alamüksused:</td>
+          <td>
+            
+          </td>
         </tr>
         <tr>
           <td colspan="2" align="right"><br/>
